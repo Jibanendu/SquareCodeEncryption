@@ -11,13 +11,15 @@ public class SquareCode {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-	
+		
 		String s = sc.nextLine();
 		
 		sc.close();
 		
 		String str= s.trim().toLowerCase().replaceAll("( )+","");
-	
+		
+		//System.out.println(str);
+		
 		String[] arrStr= str.split("");
 		
 		final int ARRAY_SPLIT_SIZE=8;
@@ -28,7 +30,7 @@ public class SquareCode {
 		
 		Map<Integer,List<String>> mp = new HashMap<Integer,List<String>>();
 		
-		for(int i=0;i<noOfArrays;i++)
+		for(int i=0;i<=noOfArrays;i++)
 		{
 			List<String> li = new LinkedList<String>();
 			
@@ -58,7 +60,7 @@ public class SquareCode {
 				{
 					int diff=ARRAY_SPLIT_SIZE-liMap.size();
 					for(int j =1;j<=diff;j++)
-					liMap.add(liMap.size()+1, "");
+					liMap.add("");
 					System.out.print(liMap.get(i));
 				}
 				else
